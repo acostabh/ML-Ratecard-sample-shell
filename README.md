@@ -1,6 +1,6 @@
-# Rate Cards & Role rates #
+# Rate Cards & Role rates - Sample Shell Script - Mac Version #
 
-This project uses a shell script to query Mavenlink's API to collect the active Rate Card version at a given date and the rates for the roles attached to that Rate Card.
+This project uses a (Mac) shell script to query Mavenlink's API to collect the active Rate Card version at a given date and the rates for the roles attached to that Rate Card.
 
 ## Pre-Requisites ##
 
