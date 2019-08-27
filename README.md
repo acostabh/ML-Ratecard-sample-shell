@@ -5,13 +5,10 @@ This project uses a (Mac) shell script to query Mavenlink's API to collect the a
 ## Pre-Requisites ##
 
   1. Install the Homebrew Package Manager and the JQ JSON parser/compiler for Shell scripting
-     - Navigate to the folder where you saved the scripts (E.G: cd Documents/web_files/ratecard_api)
-     - make the shell scripts executable
-       . chmod +x setup.sh
-       . chmod +x get_rate.sh
-     - run the setup script: ./setup.sh
-       . follow the prompts
-  2. Update the token.json file with your Mavenlink API token
+     - Navigate to the folder where you saved the scripts (E.G: cd ~/Documents/web_files/ratecard)
+     - make the shell scripts executable (run this code inside that folder only): chmod +x *.sh
+     - run the setup script: ./setup.sh (follow the prompts)
+  2. Rename the file sample_token.json to token.json and update it with with your Mavenlink API token
 
 ## Getting Rate Card details ##
 
