@@ -1,0 +1,67 @@
+<html>
+  <head>
+
+
+  </head>
+  <body>
+    <div id="content"></div>
+  </body>
+
+  <script type="text/javascript" src="rate_card.js"></script>
+  <script type="text/javascript" src="roles_rate.js"></script>
+
+  <script type="text/javascript">
+
+  //Print searched date details
+  contentLog("Date searched: "+search_date);
+  contentLog("===================================================");
+
+  //Get rate card details
+  var rc = JSON.parse(rate_card);
+  var rc_count = rc[0].count;
+
+  if(rc_count == 0) {
+    contentLog("No Rate Card found");
+    contentLog("===================================================");
+  }
+
+   else {
+
+    var card_id = rc[0].results[0].id;
+    var card_default_rate = rc[0].rate_card_versions[card_id].default_rate/100;
+    var rate_card_set_version_id = rc[0].rate_card_versions[card_id].rate_card_set_version_id;
+    var rate_card_active = rc[0].rate_card_set_versions[rate_card_set_version_id].active;
+    var rate_card_effective_date = rc[0].rate_card_set_versions[rate_card_set_version_id].effective_date;
+
+
+    contentLog("Rate Card ID: "+card_id);
+    contentLog("Active: "+rate_card_active);
+    contentLog("Effective date: "+rate_card_effective_date);
+    contentLog("===================================================");
+    contentLog("Default rate: $"+card_default_rate);
+    contentLog("===================================================");
+  }
+
+  //Get Role rate details
+  var rr = JSON.parse(roles_rate);
+  var role_count = rr[0].count;
+  var i ;
+  if(role_count == 0) {
+    contentLog("No Roles found");
+    contentLog("===================================================");
+  } else {
+    for(i = 0; i < role_count; i++) {
+        contentLog("Role ID: "+rr[0].rate_card_roles[rr[0].results[i].id].role_id);
+        contentLog("Role name: "+rr[0].roles[rr[0].rate_card_roles[rr[0].results[i].id].role_id].name);
+        contentLog("Rate: $"+rr[0].rate_card_roles[rr[0].results[i].id].rate/100);
+        contentLog("===================================================");
+
+    }
+  }
+
+  function contentLog(data) {
+    var content = document.getElementById('content').innerHTML;
+    document.getElementById('content').innerHTML = content+"</br>"+data;
+  }
+  </script>
+</html>
