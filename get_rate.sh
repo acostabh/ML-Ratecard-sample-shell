@@ -45,11 +45,11 @@ if [ x$response == x"w" ]; then
   echo 'ID: ' $rate_card_id
   echo ""
 
-  echo "var search_date='"$rate_card_date"'; \nvar rate_card='["$rate_card"]';" > rate_card.js
+  echo "var search_date='"$rate_card_date"'; var rate_card='["$rate_card"]';" > rate_card.js
   echo "var roles_rate='["$roles_rate"]';" > roles_rate.js
 
-  open -a "Google Chrome" rate.html
-
+  #open -a "Google Chrome" rate.html
+  google-chrome rate.html
 else
   rr_count=$(jq -n "$rate_card" | jq -r '.count')
   card_default_rate=$(jq -n "$rate_card" | jq -r '.rate_card_versions["'$rate_card_id'"].default_rate'/100)
