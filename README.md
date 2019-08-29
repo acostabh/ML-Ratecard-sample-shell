@@ -1,20 +1,21 @@
-# Rate Cards & Role rates - Sample Shell Script - Mac Version #
+# Rate Cards & Role rates - Sample Shell Script - Mac/Linux Version #
 
-This project uses a (Mac) shell script to query Mavenlink's API to collect the active Rate Card version at a given date and the rates for the roles attached to that Rate Card.
+This project uses a (Mac/Linux) shell script to query Mavenlink's API to collect the active Rate Card version at a given date and the rates for the roles attached to that Rate Card.
 
 ## Pre-Requisites ##
 
-  1. Install the Homebrew Package Manager and the JQ JSON parser/compiler for Shell scripting
-     - Navigate to the folder where you saved the scripts (E.G: cd ~/Documents/web_files/ratecard)
+  1. Mac: Install the Homebrew Package Manager and the JQ JSON parser/compiler for Shell scripting
+  2. Linux: Install JQ via your distribution's application manager. eg: apt-get install jq
+     - Navigate to the folder where you cloned the scripts (E.G: cd ~/Documents/ML-Ratecard-sample-shell)
      - make the shell scripts executable (run this code inside that folder only): chmod +x *.sh
      - run the setup script: ./setup.sh (follow the prompts)
-  2. Rename the file sample_token.json to token.json and update it with with your Mavenlink API token
+  3. Rename the file sample_token.json to token.json and update it with with your Mavenlink API token
 
 ## Getting Rate Card details ##
 
   1. Open terminal
   2. Navigate to the folder where you saved the script
-    - E.G: cd Documents/web_files/ratecard_api
+    - E.G: cd ~/Documents/ML-Ratecard-sample-shell
   3. Run the script: ./get_rate.sh
   4. Follow the instructions on the prompt
   5. Output options
