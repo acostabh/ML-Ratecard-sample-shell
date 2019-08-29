@@ -48,8 +48,14 @@ if [ x$response == x"w" ]; then
   echo "var search_date='"$rate_card_date"'; var rate_card='["$rate_card"]';" > rate_card.js
   echo "var roles_rate='["$roles_rate"]';" > roles_rate.js
 
-  #open -a "Google Chrome" rate.html
-  google-chrome rate.html
+  #check OS and open the HTML file accordingly (Linux/Mac only)
+  os_type=$(uname)
+  if [ $os_type == "Linux" ]; then
+    google-chrome rate.html
+  else
+    open -a "Google Chrome" rate.html
+  fi
+
 else
   rr_count=$(jq -n "$rate_card" | jq -r '.count')
   card_default_rate=$(jq -n "$rate_card" | jq -r '.rate_card_versions["'$rate_card_id'"].default_rate'/100)
