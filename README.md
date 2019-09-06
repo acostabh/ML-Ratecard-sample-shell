@@ -22,3 +22,5 @@ This project uses a (Mac/Linux) shell script to query Mavenlink's API to collect
       - HTML: if you run the script with the w switch, it will show the results as a HTML file in your browser. Usage:  ./get_rate.sh w
       - Console: if you run the script without any switches or with switch c the results will be shown on your console. Usage: ./get_rate.sh or ./get_rate.sh c
       - Set date: You can set the date as you run the script by adding the date in YYYY-MM-DD format after one of the switches above. You MUST provide a display switch (w or c) if you want to set the date this way. Usage: ./get_rate.sh w 2019-08-16   or ./get_rate.sh c 2019-08-16
+
+  Disclaimer: These scripts are provided as sample code and they are NOT official Mavenlink tools, but generated as part of an exercise to investigate the use of Mavenlink's API based on specific scenarios. The developer accepts no liability for any issues that could arise from using these scripts.
